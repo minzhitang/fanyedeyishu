@@ -1,0 +1,34 @@
+{
+  "name": "fanyedeyishu",
+  "version": "1.0.0",
+  "description": "fanyedeyishu",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "minzhi",
+  "license": "ISC",
+  "dependencies": {
+    "@sina/koa-common": "^0.1.1",
+    "@sina/koa-config": "^0.1.9",
+    "@sina/koa-jsonp": "0.0.2",
+    "@sina/koa-log": "0.0.6",
+    "@sina/koa-mysql": "^0.1.12",
+    "@sina/koa-xhttp": "0.0.3",
+    "co-body": "^4.0.0",
+    "co-views": "^2.1.0",
+    "jquery": "^2.2.0",
+    "koa": "^1.1.2",
+    "koa-error": "^1.1.3",
+    "koa-favicon": "^1.2.0",
+    "koa-router": "^5.3.0",
+    "koa-session": "^3.3.1",
+    "koa-static": "^1.5.2",
+    "koa-useragent": "^0.1.1",
+    "mc": "^1.0.6",
+    "swig": "^1.4.2",
+    "weui": "^0.3.0",
+    "xml2js": "^0.4.16"
+  },
+  "aceenv": {}
+}

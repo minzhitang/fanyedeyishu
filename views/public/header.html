@@ -1,0 +1,23 @@
+<div class="header" id="isLogin" isLogin={{ isLogin }} data-sudaclick="public_topnav">
+    <div class="headerWrap clearfix">
+        <div class="headerLeft clearfix">
+            <a href="/" class="zcLogo">
+                <img src="/images/logo.png?v={{ v }}" alt="科技众测">
+            </a>
+            <a href="/" class="zcNav {% if s=='index' %}selected{% endif %}">首页</a>
+            <a href="http://zhongce.koa/activity/lists" class="zcNav {% if s=='activity' %}selected{% endif %}">众测产品</a>
+            <a href="#" class="zcNav {% if s=='report' %}selected{% endif %}">众测报告</a>
+            <a href="#" class="zcNav {% if s=='user' %}selected{% endif %}">我的众测</a>
+            <a href="mailto:zhongce@vip.sina.com" class="zcNav">合作联系</a>
+            <a href="javascript:;" class="zcSign">签到</a>
+        </div>
+        <div class="headerRight loginout" id="userLogin">
+            <img src="http://www.sinaimg.cn/ent/deco/2014/0311/images/sc_pic_loginImage.png" class="img1" alt="">
+            <a href="#" target="_blank" class="header"><img src="http://www.sinaimg.cn/ent/deco/2014/0311/images/sc_pic_loginImage.png" class="img2" alt=""></a>
+            <a target="_blank" class="name"></a>
+            <a href="#" class="message {% if unRead %}unread{% endif %}"></a>
+            <a href="javascript:;" class="login">登录</a>
+            <a target="_blank" href="https://login.sina.com.cn/signup/signup?entry=tech" class="register">注册</a>
+        </div>
+    </div>
+</div>

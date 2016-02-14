@@ -1,0 +1,23 @@
+{
+    // 使用 airbnb 编码风格规范
+    // "airbnb", "crockford", "google", "jquery", "mdcs", "node-style-guide", "wikimedia", "wordpress", "yandex"
+    "preset": "airbnb",
+
+    // 改变 requireCurlyBraces 规则
+    "requireCurlyBraces": null, // or false
+
+    // 排除目录
+    "excludeFiles": ["node_modules/**", "static/**"],
+
+    // 缩进改为4，airbnb默认为2
+    "validateIndentation": 4,
+
+    // 只检查js文件
+    "fileExtensions": [".js"],
+
+    // 启用新语法
+    "esnext": true,
+
+    // 为有错误的信息添加规则名称
+    "verbose": true
+}

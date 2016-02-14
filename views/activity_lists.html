@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <title>数码产品试用_新浪众测_新浪科技</title>
+    <meta name="Keywords" content="试用,免费试用,众测,消费众测,网友体验,测评,评测,报告" />
+    <meta name="description" content="新浪众测提供最新电子产品评测,数码产品试用,通过体验者分享最真实的使用感受，为消费者提供更客观的购买参考。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/css/zc_index.css?v={{ v }}">
+    <meta content="width=1180,maximum-scale=2.0" name="viewport"/>
+</head>
+{% endblock %}
+
+{% block content %}
+    {% include 'public/header.html' %}
+    <div class="sumMain" data-sudaclick="activity_lists">
+        <div class="sumTab" id="sumTab">
+            <a href="javascript:;" datanum="0" class="selected">全部(<span></span>)</a>
+            <a href="javascript:;" datanum="1">申请中(<span></span>)</a>
+            <a href="javascript:;" datanum="2">即将开始(<span></span>)</a>
+            <a href="javascript:;" datanum="3">试用中(<span></span>)</a>
+            <a href="javascript:;" datanum="4">已结束(<span></span>)</a>
+        </div>
+        <div class="zcSlider" id="zcSlider">
+            <div class="zcItem clearfix">
+            </div>
+        </div>
+        <div class="zcPageDiv" id="zcPageDiv1" style="display:none;">
+            <a href="javascript:;" class="page_num btn unclick" id="page_prev1">上一页</a>
+                <span id="page_box_wrap1"></span>
+            <a href="javascript:;" class="page_num btn" id="page_next1">下一页</a>
+        </div>
+        <div class="feed-card-loading" id="zcLoading" style="display: none;">
+            <img src="http://i1.sinaimg.cn/home/main/ipadwww14/04/loading.gif" width="30" height="30">
+        </div>
+    </div>
+    <div class="zcFixBtn">
+        <a href="javascript:;" id="zcTop" class="zcTop"></a>
+    </div>
+   {% include 'public/footer.html' %}
+    <div id="actId" dataId="1" style="display:none;"></div>
+    <script type="text/javascript">
+    //js异步加载管理
+    (function(){var w=this,d=document,version='1.0.7',data={},length=0,cbkLen=0;if(w.jsLoader){if(w.jsLoader.version>=version){return};data=w.jsLoader.getData();length=data.length};var addEvent=function(obj,eventType,func){if(obj.attachEvent){obj.attachEvent("on"+eventType,func)}else{obj.addEventListener(eventType,func,false)}};var domReady=false,ondomReady=function(){domReady=true};if(d.addEventListener){var webkit=navigator.userAgent.match(/AppleWebKit\/(\d+)/);if(webkit&&webkit[1]<525){doReadyStateCheck()}else{d.addEventListener("DOMContentLoaded",function(){d.removeEventListener("DOMContentLoaded",arguments.callee,false);ondomReady()},false)}};function doScrollCheck(){if(domReady){return};try{d.documentElement.doScroll("left")}catch(e){return};ondomReady()};function doReadyStateCheck(){if(domReady){return};if(d.readyState=='loaded'||d.readyState=='complete'){ondomReady();return}else{setTimeout(doReadyStateCheck,1);return}};function createPosNode(){if(jsLoader.caller){return};cbkLen++;if(!domReady&&d.attachEvent){doScrollCheck()};if(!domReady){try{d.write('<div style="display:none" id="_jl_pos_'+cbkLen+'"></div>');s=d.getElementById('_jl_pos_'+cbkLen)}catch(e){var s=d.createElement('div');s.id='_jl_pos_'+cbkLen;s.style.display='none';d.body.insertBefore(s,d.body.firstChild)}}else{var s=d.createElement('div');s.id='_jl_pos_'+cbkLen;s.style.display='none';d.body.appendChild(s)};return s};function getScript(url,dispose,charset){var scriptNode=d.createElement("script");scriptNode.type="text/javascript";if(charset){scriptNode.charset=charset};scriptNode.onreadystatechange=scriptNode.onload=function(){if(!this.readyState||this.readyState=="loaded"||this.readyState=="complete"){if(dispose){dispose()};scriptNode.onreadystatechange=scriptNode.onload=null;scriptNode.parentNode.removeChild(scriptNode)}};scriptNode.src=url;var h=d.getElementsByTagName("head")[0];h.insertBefore(scriptNode,h.firstChild)};var write=d.write,posNode;function cWrite(str){if(posNode.childNodes.length>0){return};if(posNode.innerHTML!=''){while(posNode.childNodes.length){posNode.parentNode.insertBefore(posNode.childNodes[0],posNode)}};posNode.innerHTML=str;while(posNode.childNodes.length){posNode.parentNode.insertBefore(posNode.childNodes[0],posNode)}};var JsObj=function(name,url){this.name=name;this.url=url;this.callback=[]};JsObj.prototype={status:'init',onload:function(){this.status='ok';var errors=[];for(var i=0;i<this.callback.length;i++){if(typeof this.callback[i]=='function'){try{if(this.callback[i].posNode){posNode=this.callback[i].posNode;d.write=cWrite};this.callback[i]();if(this.callback[i].posNode){d.write=write;this.callback[i].posNode.parentNode.removeChild(this.callback[i].posNode)}}catch(e){errors.push(e)}}};this.callback=[];if(errors.length!=0){throw errors[0]}}};w.jsLoader=function(cfg){var url=cfg.url||"";var name=cfg.name||"";var callback=cfg.callback||"";var charset=cfg.charset||"";if(name){if(!data[name]){if(!url){data[name]=new JsObj(name);data[name].status='waiting'}else{data[name]=new JsObj(name,url)};length++}else if(data[name].status=='waiting'&&url){data[name].status='init'};if(cfg.status){data[name].status=cfg.status};if(data[name].status=='loading'||data[name].status=='waiting'){if(typeof callback=='function'){callback.posNode=createPosNode();data[name].callback.push(callback)};return}else if(data[name].status=='ok'){if(typeof callback=='function'){callback()};return}}else{if(!url){return};for(var item in data){if(data[item].url==url){name=item;break}};if(!name){name='noname'+length;data[name]=new JsObj(name,url);length++};if(data[name].status=='loading'){if(typeof callback=='function'){callback.posNode=createPosNode();data[name].callback.push(callback)};return}else if(data[name].status=='ok'){if(typeof callback=='function'){callback()};return}};if(typeof callback=='function'){callback.posNode=createPosNode();data[name].callback.push(callback)};getScript(url,function(){data[name].onload()},charset);data[name].status='loading'};w.jsLoader.version=version;w.jsLoader.getData=function(){return data}})();
+    </script>
+    <script type="text/javascript" src=" http://i.sso.sina.com.cn/js/outlogin_layer.js " charset="utf-8">
+    </script>
+    <script type="text/javascript" src="http://i.sso.sina.com.cn/js/user_panel_new_version_v2.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/widget/pageTool.js?v={{ v }}"></script>
+    <script type="text/javascript">
+        jsLoader({
+            name : 'zcIndex',
+            url : '/js/pl/zc_index.js?v={{ v }}',
+            callback: function() {
+                //console.log();
+                //zcIndex._isScreen()
+                zcIndex._scrollToTop();
+                zcIndex._initRep();
+            }
+        })
+    </script>
+    <script type="text/javascript" src="http://www.sinaimg.cn/unipro/pub/suda_m_v629.js"></script>
+    <script type="text/javascript">suds_init(3556,100.0000,1015,2);</script>
+
+{% endblock %}
+
+{% block script %}
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+{% endblock %}
