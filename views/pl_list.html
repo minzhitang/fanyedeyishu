@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <title>{{open_id}} - 看过的绘本</title>
+        <link rel="stylesheet" href="/css/weui.css"/>
+    </head>
+    <body>
+        {% for cm in pl_list %}
+        <!-- <li{% if loop.first %} class="first"{% endif %}>{{ author }}</li> -->
+        <article class="weui_article">
+            <img src='{{cm.book_info.picture}}' />
+            <p>{{cm.comment}}</p>
+
+        </article>
+        {% endfor %}
+            <!-- <img src='{{book.picture}}' /> -->
+            <!-- <h1>{{book.book_name}}</h1> -->
+
+            <!-- <h3>{{book.author}} 著，{{book.drawer}} 绘，{{book.translator}} 译</h3> -->
+
+            <!-- <h3>{{book.press}} isbn: {{book.isbn}}</h3> -->
+
+            <!-- <h3>内容简介</h3> -->
+            <!-- <p>{{book.content_introduction}}</p> -->
+            <!-- <h3>作者简介</h3>  -->
+            <!-- <p>{{book.author_introduction}}</p> -->
+
+            <!-- <a href="{{book.jd_book_url}}" class="weui_btn weui_btn_plain_default">京东购买</a> -->
+    </body>
+</html>
