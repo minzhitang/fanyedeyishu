@@ -46,7 +46,7 @@ exports.getListByOpenId = function * ( open_id ) {
  */
 exports.getListById = function * ( id ) {
     "use strict"
-    let list = yield book_list_db.select('id, open_id, content, created_time').where({
+    let list = yield book_list_db.select('id, open_id, title, content, created_time').where({
         'id'      : id,
         'status'  : 1
     }).one();

@@ -15,7 +15,7 @@ var wwwRouter = require('koa-router')();
 var test = require('../controller/test');
 var token = require('../controller/token');
 var index = require('../controller/index');
-// var web = require('../controller/web');
+var web = require('../controller/web');
 
 /**
  * 前台路由
@@ -23,14 +23,13 @@ var index = require('../controller/index');
 
 wwwRouter.post('/index', index.rec);
 wwwRouter.get('/token/flush', token.flush);
-
-// wwwRouter.get('/test/token', test.token);
+wwwRouter.get('/booklist/:list_id', web.booklist);
+// wwwRouter.get('/web/pl_list', web.pl_list);
 // wwwRouter.get('/test/menu', test.menu);
 // wwwRouter.get('/test/check', test.check);
-wwwRouter.get('/test/aa', test.aa);
+// wwwRouter.get('/test/aa', test.aa);
 // wwwRouter.get('/test/cc', test.cc);
 
-// wwwRouter.get('/book/:book_id', web.book);
 // wwwRouter.post('/test/login', test.login);
 /**
  * 后台路由

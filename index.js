@@ -57,8 +57,8 @@ app.use(staticServer(init.config.staticDir));
 
 // init router/jsonp/json/404/500/view engine/app config
 app.use(function * (next) {
-    this.render = views(init.config.templateDir, { map: { html: 'swig' }});
-
+    // this.render = views(init.config.templateDir, { map: { html: 'swig' }});
+    // console.log(this.render);
     // var body = yield parse.text(this);
     // console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
     // console.log(body);

@@ -10,6 +10,9 @@ var cz_process = require('./cz_process');
 var yd_process = require('./yd_process');
 // 想读
 var xd_process = require('./xd_process');
+// 创建书单
+var create_process = require('./create_process');
+
 
 /**
  * 
@@ -60,6 +63,9 @@ exports.process = function * (obj) {
                 case 'xd':
                     echo = yield xd_process.process( dia, obj.Content, obj.MsgType );
                     break;
+                case 'create':
+                    echo = yield create_process.process( dia, obj.Content, obj.MsgType );
+                    break;
             }
             for ( let attr in echo ) {
                 rec[attr] = echo[attr];
@@ -94,6 +100,9 @@ exports.process = function * (obj) {
                     case 'xd':
                         stru = yield xd_process.init_structure();
                         break;
+                    case 'create':
+                        stru = yield create_process.init_structure();
+                        break;
                 }
                 dia = yield dialog_model.insertDialog({
                         'open_id'   : obj.FromUserName,
@@ -114,6 +123,9 @@ exports.process = function * (obj) {
                     break;
                 case 'xd':
                     echo = yield xd_process.process( dia, obj.Content );
+                    break;
+                case 'create':
+                    echo = yield create_process.process( dia, obj.Content );
                     break;
             }
             for ( let attr in echo ) {

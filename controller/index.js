@@ -15,10 +15,21 @@ exports.rec = function * () {
     /** 验证是否微信发送过来的请求 @TODO: 有时候还验证不match*/
     /*let signature = this.request.query.signature || '';
     let timestamp = this.request.query.timestamp || '';
-    let nonce     = this.request.query.nonce || '';*/
+    let nonce     = this.request.query.nonce || '';
     // let match = 1;
-    // console.log('%s, %s, %s', signature, timestamp, nonce);
-    // let match = yield weixin.checkSignature(signature, timestamp, nonce);
+    console.log('%s, %s, %s', signature, timestamp, nonce);
+    let match = yield weixin.checkSignature(signature, timestamp, nonce);
+
+    if (match) {
+        console.log('match');
+        this.body = this.request.query.echostr;
+    }
+    else {
+        console.log('not match');
+        this.body = 'not match';
+    }*/
+
+
     /** 验证完毕 */
     var match = true;
 

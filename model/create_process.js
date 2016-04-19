@@ -46,8 +46,9 @@ exports.process = function * ( dialog, content, msgtype ) {
             // 'book_id' : dialog.structure.book_id,
             // 'score'   : dialog.structure.score,
             'title'   : dialog.structure.title,
-            'content' : dialog.structure.content
+            'content' : JSON.stringify(dialog.structure.content)
         });
+        result.echo.Content = result.echo.Content + 'http://test.tingxiaozhu.cn/booklist/' + s;
         // console.log('存下评论，本次评论结束');
     }
     // console.log(dialog);
@@ -120,7 +121,7 @@ var confirmListName = function * ( stru, content, msgtype ) {
     return {
         'echo' : {
             'MsgType' : 'text',
-            'Content' : '好嘞，书单名是：' + name + ', 接下来请输入书名，打字语音都可以'
+            'Content' : '好嘞，书单名是：' + name + '， 接下来请输入书名，打字语音都可以'
         },
         'step' : 3,
         'title' : name
@@ -148,6 +149,16 @@ var checkBookName = function * ( stru, content, msgtype ) {
         pre_content = '您说的是：' + content + '？';
     }
     let result = {};
+    if ( content == '完成' ) {
+        return {
+            'echo' : {
+                'MsgType' : 'text',
+                'Content' : '谢谢！'
+            },
+            'step' : 6,
+            // 'comment' : content
+        };    
+    }
     if ( !book_list || (0 == book_list.length) ) {
         result = {
             'echo' : {
@@ -232,7 +243,7 @@ var confirmBook = function * ( stru, content, msgtype ) {
                 'MsgType' : 'text',
                 'Content' : '请来段原创评论，可以语音哟~'
             },
-            'step' : 3,
+            'step' : 5,
             'book_id' : stru.tmp_book_list[0]
         };
     }
@@ -244,7 +255,7 @@ var confirmBook = function * ( stru, content, msgtype ) {
                     'MsgType' : 'text',
                     'Content' : '请来段原创评论，可以语音哟~'
                 },
-                'step' : 3,
+                'step' : 5,
                 'book_id' : stru.tmp_book_list[pos]
             };
         }
@@ -277,7 +288,7 @@ var commentBook = function * ( stru, content, msgtype ) {
         return {
             'echo' : {
                 'MsgType' : 'text',
-                'Content' : '谢谢！'
+                'Content' : '谢谢！戳这里看你创建的书单：'
             },
             'step' : 6,
             // 'comment' : content
@@ -298,7 +309,7 @@ var commentBook = function * ( stru, content, msgtype ) {
             'step' : 3,
             'content' : cont,
             // 清零
-            'book_id' : 0
+            'book_id' : 0,
             'tmp_book_list' : [],
             // 'comment' : stru.comment + "\n" + content
         };

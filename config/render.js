@@ -6,7 +6,6 @@ var init = require('../sys/sysInit');
 module.exports = function () {
     // console.log(init.config.templateDir);
     // console.log(config.templateDir);
-
     return views(init.config.templateDir, {
         map: {
             html  : 'swig',
@@ -14,3 +13,10 @@ module.exports = function () {
         }
     });
 };
+
+/*module.exports = views(init.config.templateDir, {
+    map: {
+        html  : 'swig',
+        cache : false
+    }
+});*/

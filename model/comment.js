@@ -18,3 +18,13 @@ exports.insertComment = function * ( obj ) {
     let succ = yield comment_db.insert( obj );
     return succ;
 }
+
+
+exports.getListByOpenId = function * ( open_id ) {
+    "use strict"
+    let pl_list = yield comment_db.select('id, open_id, book_id, comment, created_time').where({
+        'open_id' : open_id,
+        'status'  : 1
+    }).orderBy('created_time').all();
+    return pl_list;
+}
