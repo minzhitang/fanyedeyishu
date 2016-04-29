@@ -19,6 +19,14 @@ exports.rec = function * () {
     // let match = 1;
     // console.log('%s, %s, %s', signature, timestamp, nonce);
     // let match = yield weixin.checkSignature(signature, timestamp, nonce);
+    
+    /*if (match) {
+        this.body = this.request.query.echostr;
+        // this.body = 11;
+    }
+    else {
+        this.body = 'not match';
+    }*/
     /** 验证完毕 */
     var match = true;
 

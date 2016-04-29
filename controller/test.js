@@ -44,9 +44,9 @@ exports.menu = function * () {
 
 exports.aa = function *() {
     "use strict"
-    let books = yield book.searchName('巴巴爸爸zhao');
-    console.dir(books);
-    console.log(books[0].num);
+    // let books = yield book.searchName('巴巴爸爸zhao');
+    // console.dir(books);
+    // console.log();
     this.body = 'ddd';
     // exit;
 
@@ -88,7 +88,6 @@ exports.aa = function *() {
     // console.log(post);
 
     // http
-    // let url = 'http://wangkun5.zhongce.sina.com.cn/activity/activity_lists/0/?page=1&format=json';
     // let header = {Referer: 'https://www.google.com.hk'};
 
     // let response = yield xhttp.get(url, header); //Yay, HTTP requests with no callbacks!
